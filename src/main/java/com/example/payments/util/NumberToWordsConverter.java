@@ -20,7 +20,7 @@ public class NumberToWordsConverter {
             "Ninety"    // 9
     };
 
-    public static String convert(long number) {
+    public static String convert(double number) {
         if (number == 0) {
             return "Zero";
         }

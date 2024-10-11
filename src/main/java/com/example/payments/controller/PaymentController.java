@@ -68,7 +68,7 @@ public class PaymentController {
     // Generate PDF based on invoice number
     @GetMapping("/generate-invoice/{invoiceNumber}")
     public ResponseEntity<Payment> generateInvoicePdf(@PathVariable String invoiceNumber) {
-        Payment payment = paymentService.getPaymentByInvoiceNumber(invoiceNumber);
+        Payment payment = paymentService.generateInvoicePdf(invoiceNumber);
 
         if (payment == null) {
             return ResponseEntity.notFound().build();

@@ -1,5 +1,6 @@
 package com.example.payments.model;
 
+import com.example.payments.util.NumberToWordsConverter;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -53,6 +54,12 @@ public class Payment {
     public double getTotalAmountAfterTDS() {
         double totalPrice = getTotalPrice();
         return totalPrice - (totalPrice * tds / 100);
+    }
+
+    public String getTotalAmountAfterTDSInWords() {
+        double totalPrice = getTotalPrice();
+        totalPrice = totalPrice - (totalPrice * tds / 100);
+        return NumberToWordsConverter.convert(totalPrice);
     }
     
 }
